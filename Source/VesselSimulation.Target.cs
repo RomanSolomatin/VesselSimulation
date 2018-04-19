@@ -8,5 +8,7 @@ public class VesselSimulationTarget : TargetRules
 	public VesselSimulationTarget(TargetInfo Target) : base (Target)
 	{
 		Type = TargetType.Game;
+
+		ExtraModuleNames.Add("VesselSimulation");
 	}
 }
