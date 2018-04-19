@@ -1,5 +1,5 @@
-#include "VesselSimulation.h"
 #include "VesselSimLib/Utility.h"
+#include "VesselSimulation.h"
 
 // VECTOR
 vsl::Vector::Vector() : x(0), y(0), z(0) { }

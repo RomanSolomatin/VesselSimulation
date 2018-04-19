@@ -1,5 +1,5 @@
-#include "VesselSimulation.h"
 #include "VesselSimLib/IShip.h"
+#include "VesselSimulation.h"
 
 int vsl::IShip::getId() {
 	return id;

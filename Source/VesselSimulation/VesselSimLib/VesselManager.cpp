@@ -1,5 +1,5 @@
-#include "VesselSimulation.h"
 #include "VesselSimLib/VesselManager.h"
+#include "VesselSimulation.h"
 #include "VesselSimLib/ShipBuilding.h"
 
 vsl::VesselManager::VesselManager() {

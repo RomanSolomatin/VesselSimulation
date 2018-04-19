@@ -1,5 +1,5 @@
-#include "VesselSimulation.h"
 #include "VesselSimLib/ShipController.h"
+#include "VesselSimulation.h"
 #include <algorithm>
 
 vsl::ShipController::ShipController(DynamicData* _dyn) {

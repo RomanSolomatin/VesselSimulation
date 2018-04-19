@@ -1,5 +1,5 @@
-#include "VesselSimulation.h"
 #include "VesselSimLib/DynamicData.h"
+#include "VesselSimulation.h"
 #include "VesselSimLib/Utility.h"
 
 vsl::DynamicData::DynamicData() {

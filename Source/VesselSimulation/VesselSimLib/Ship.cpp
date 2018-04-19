@@ -1,5 +1,5 @@
-#include "VesselSimulation.h"
 #include "VesselSimLib/Ship.h"
+#include "VesselSimulation.h"
 #include "VesselSimLib/LowFidelityDynamics.h"
 #include "VesselSimLib/ShipController.h"
 

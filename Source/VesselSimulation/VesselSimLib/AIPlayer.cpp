@@ -1,5 +1,5 @@
-#include "VesselSimulation.h"
 #include "VesselSimLib/AIPlayer.h"
+#include "VesselSimulation.h"
 #include "VesselSimLib/IShip.h"
 #include "VesselSimLib/Utility.h"
 #include <algorithm>

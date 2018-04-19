@@ -1,5 +1,5 @@
-#include "VesselSimulation.h"
 #include "VesselSimLib/ShipBuilding.h"
+#include "VesselSimulation.h"
 #include "VesselSimLib/Ship.h"
 
 vsl::IShip* vsl::ShipBuilding::makeVessel(std::string type) {
