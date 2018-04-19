@@ -4,7 +4,7 @@ using UnrealBuildTool;
 
 public class VesselSimulation : ModuleRules
 {
-	public VesselSimulation(TargetInfo Target)
+	public VesselSimulation(ReadOnlyTargetRules Target) : base (Target)
 	{
 		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore" });
 

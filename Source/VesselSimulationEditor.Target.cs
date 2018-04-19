@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 public class VesselSimulationEditorTarget : TargetRules
 {
-	public VesselSimulationEditorTarget(TargetInfo Target)
+	public VesselSimulationEditorTarget(TargetInfo Target) : base (Target)
 	{
 		Type = TargetType.Editor;
 	}

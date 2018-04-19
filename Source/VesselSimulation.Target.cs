@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 public class VesselSimulationTarget : TargetRules
 {
-	public VesselSimulationTarget(TargetInfo Target)
+	public VesselSimulationTarget(TargetInfo Target) : base (Target)
 	{
 		Type = TargetType.Game;
 	}
