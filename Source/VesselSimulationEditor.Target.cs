@@ -8,5 +8,10 @@ public class VesselSimulationEditorTarget : TargetRules
 	public VesselSimulationEditorTarget(TargetInfo Target) : base (Target)
 	{
 		Type = TargetType.Editor;
+
+		ExtraModuleNames.Add("VesselSimulation");
+
+		bUseUnityBuild = false;
+		bUsePCHFiles = false;
 	}
 }
