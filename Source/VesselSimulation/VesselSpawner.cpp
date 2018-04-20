@@ -141,29 +141,29 @@ void AVesselSpawner::Tick(float DeltaTime) {
 }
 
 // Called to bind functionality to input
-void AVesselSpawner::SetupPlayerInputComponent(class UInputComponent* InputComponent) {
-	Super::SetupPlayerInputComponent(InputComponent);
+void AVesselSpawner::SetupPlayerInputComponent(class UInputComponent* InputComp) {
+	Super::SetupPlayerInputComponent(InputComp);
 
-	InputComponent->BindAction("IncrementEngineStep", IE_Pressed, this, &AVesselSpawner::EngineUp);
-	InputComponent->BindAction("DecrementEngineStep", IE_Pressed, this, &AVesselSpawner::EngineDown);
+	InputComp->BindAction("IncrementEngineStep", IE_Pressed, this, &AVesselSpawner::EngineUp);
+	InputComp->BindAction("DecrementEngineStep", IE_Pressed, this, &AVesselSpawner::EngineDown);
 
-	InputComponent->BindAction("RudderInputRight", IE_Pressed, this, &AVesselSpawner::RudderInputRight);
-	InputComponent->BindAction("RudderInputRight", IE_Released, this, &AVesselSpawner::RudderInputCancelRight);
-	InputComponent->BindAction("RudderInputLeft", IE_Pressed, this, &AVesselSpawner::RudderInputLeft);
-	InputComponent->BindAction("RudderInputLeft", IE_Released, this, &AVesselSpawner::RudderInputCancelLeft);
+	InputComp->BindAction("RudderInputRight", IE_Pressed, this, &AVesselSpawner::RudderInputRight);
+	InputComp->BindAction("RudderInputRight", IE_Released, this, &AVesselSpawner::RudderInputCancelRight);
+	InputComp->BindAction("RudderInputLeft", IE_Pressed, this, &AVesselSpawner::RudderInputLeft);
+	InputComp->BindAction("RudderInputLeft", IE_Released, this, &AVesselSpawner::RudderInputCancelLeft);
 
-	InputComponent->BindAction("LeftClick", IE_Pressed, this, &AVesselSpawner::LeftClick);
-	InputComponent->BindAction("LeftClick", IE_Released, this, &AVesselSpawner::LeftClickRelease);
-	InputComponent->BindAction("CTRL_LeftClick", IE_Pressed, this, &AVesselSpawner::CTRL_LeftClick);
-	InputComponent->BindAction("CTRL_LeftClick", IE_Released, this, &AVesselSpawner::CTRL_LeftClickRelease);
-	InputComponent->BindAction("RightClick", IE_Pressed, this, &AVesselSpawner::RightClick);
-	InputComponent->BindAction("CTRL_RightClick", IE_Pressed, this, &AVesselSpawner::CTRL_RightClick);
+	InputComp->BindAction("LeftClick", IE_Pressed, this, &AVesselSpawner::LeftClick);
+	InputComp->BindAction("LeftClick", IE_Released, this, &AVesselSpawner::LeftClickRelease);
+	InputComp->BindAction("CTRL_LeftClick", IE_Pressed, this, &AVesselSpawner::CTRL_LeftClick);
+	InputComp->BindAction("CTRL_LeftClick", IE_Released, this, &AVesselSpawner::CTRL_LeftClickRelease);
+	InputComp->BindAction("RightClick", IE_Pressed, this, &AVesselSpawner::RightClick);
+	InputComp->BindAction("CTRL_RightClick", IE_Pressed, this, &AVesselSpawner::CTRL_RightClick);
 
 // CAMERA
-	InputComponent->BindAction("ChangeCamera", IE_Pressed, this, &AVesselSpawner::ChangeCamera);
-	InputComponent->BindAxis("MoveForward", this, &AVesselSpawner::MoveForward);
-	InputComponent->BindAxis("MoveRight", this, &AVesselSpawner::MoveRight);
-	InputComponent->BindAction("FollowPlayer", IE_Pressed, this, &AVesselSpawner::ToggleFollowPlayer);
+	InputComp->BindAction("ChangeCamera", IE_Pressed, this, &AVesselSpawner::ChangeCamera);
+	InputComp->BindAxis("MoveForward", this, &AVesselSpawner::MoveForward);
+	InputComp->BindAxis("MoveRight", this, &AVesselSpawner::MoveRight);
+	InputComp->BindAction("FollowPlayer", IE_Pressed, this, &AVesselSpawner::ToggleFollowPlayer);
 }
 
 void AVesselSpawner::RudderInputLeft() { ue_player.rudder_input_dir = -1; }
@@ -299,10 +299,10 @@ void AVesselSpawner::drawUI() {
 
 		// Draw sphere if it's selected or it's the player controlled ship
 		if (vsl_sim.isVesselSelected(id) || !sh->isFollowingWaypoints()) {
-			vsl::Vector pos = sh->getPosition();
+			vsl::Vector pos1 = sh->getPosition();
 			DrawDebugSphere(
 				GetWorld(),
-				FVector(pos.x, pos.y, WATER_HEIGHT),
+				FVector(pos1.x, pos1.y, WATER_HEIGHT),
 				4000,
 				10,
 				sh->isFollowingWaypoints() ? FColor::Magenta : FColor::Green
@@ -326,12 +326,12 @@ void AVesselSpawner::drawUI() {
 
 			// Other WPs
 			for (int i = 0; i < wp_list.size(); ++i) {
-				vsl::Vector pos = wp_list[i];
+				vsl::Vector pos2 = wp_list[i];
 
 				// Draw WP
 				DrawDebugSphere(
 					GetWorld(),
-					FVector(pos.x, pos.y, WATER_HEIGHT),
+					FVector(pos2.x, pos2.y, WATER_HEIGHT),
 					4000,
 					10,
 					FColor::Green
@@ -342,7 +342,7 @@ void AVesselSpawner::drawUI() {
 					vsl::Vector next_pos = wp_list[i + 1];
 					DrawDebugLine(
 						GetWorld(),
-						FVector(pos.x, pos.y, WATER_HEIGHT),
+						FVector(pos2.x, pos2.y, WATER_HEIGHT),
 						FVector(next_pos.x, next_pos.y, WATER_HEIGHT),
 						FColor(0, 150, 0),
 						false, -1, 0,
