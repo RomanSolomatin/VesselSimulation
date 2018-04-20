@@ -9,7 +9,7 @@ namespace vsl {
 	class VESSELSIMULATION_API IShip : public vsl::IController {
 	public:
 		IShip() = default;
-		~IShip() = default;
+		virtual ~IShip() = default;
 
 		virtual void init(vsl::Vector _pos, vsl::Vector _rot) = 0;
 		virtual void update(float _dt) = 0;

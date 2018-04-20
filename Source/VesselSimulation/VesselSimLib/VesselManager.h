@@ -8,7 +8,7 @@ namespace vsl {
 	class VESSELSIMULATION_API VesselManager {
 	public:
 		VesselManager();
-		~VesselManager();
+		virtual ~VesselManager();
 
 		virtual void init();
 		virtual void update(float _dt);

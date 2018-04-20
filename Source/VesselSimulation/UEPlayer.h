@@ -9,7 +9,7 @@ namespace vsl {
 class UEPlayer : public vsl::IPlayer {
 	public:
 		UEPlayer();
-		~UEPlayer();
+		virtual ~UEPlayer();
 
 		int rudder_input_dir = 0;
 		int engine_input_dir = 0;
