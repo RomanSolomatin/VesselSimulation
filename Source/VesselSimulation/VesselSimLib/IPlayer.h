@@ -1,5 +1,7 @@
 #pragma once
 
+#include "CoreMinimal.h"
+
 namespace vsl {
 	class IShip;
 	class VESSELSIMULATION_API IPlayer {

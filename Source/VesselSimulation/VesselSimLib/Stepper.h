@@ -1,5 +1,7 @@
 #pragma once
 
+#include "CoreMinimal.h"
+
 namespace vsl {
 	class VESSELSIMULATION_API Stepper {
 	public:

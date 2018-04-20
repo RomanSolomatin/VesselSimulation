@@ -4,6 +4,8 @@
 
 #include "GameFramework/Actor.h"
 #include "VesselSimLib/IShip.h"
+#include "GameFramework/SpringArmComponent.h"
+#include "Camera/CameraComponent.h"
 #include "VesselActor.generated.h"
 
 UCLASS()

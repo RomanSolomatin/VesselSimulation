@@ -2,6 +2,9 @@
 
 #include "VesselSpawner.h"
 #include "VesselSimulation.h"
+#include "Engine/World.h"
+#include "Engine/Engine.h"
+#include "DrawDebugHelpers.h"
 
 const int SHIP_COUNT = 9;
 

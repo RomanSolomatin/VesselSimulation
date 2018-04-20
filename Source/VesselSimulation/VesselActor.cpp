@@ -6,6 +6,9 @@
 #include <algorithm>
 
 #include "Runtime/Core/Public/Containers/UnrealString.h"
+#include "Components/StaticMeshComponent.h"
+#include "UObject/ConstructorHelpers.h"
+#include "Engine/StaticMesh.h"
 
 
 // Sets default values

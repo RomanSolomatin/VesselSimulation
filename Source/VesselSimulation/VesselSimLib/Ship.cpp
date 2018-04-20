@@ -2,6 +2,7 @@
 #include "VesselSimulation.h"
 #include "VesselSimLib/LowFidelityDynamics.h"
 #include "VesselSimLib/ShipController.h"
+#include "Engine/Engine.h"
 
 vsl::Ship::Ship() {
 	init(vsl::Vector::Zero(), vsl::Vector::Zero());
