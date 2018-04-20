@@ -393,7 +393,7 @@ void AVesselSpawner::handleCamera(float DeltaTime) {
 		if (!MovementInput.IsZero())
 		{
 			//Scale our movement input axis values by 100 units per second
-			MovementInput = MovementInput.SafeNormal() * 100000.0f;
+			MovementInput = MovementInput.GetSafeNormal() * 100000.0f;
 			FVector NewLocation = GetActorLocation();
 			NewLocation += GetActorForwardVector() * MovementInput.X * DeltaTime;
 			NewLocation += GetActorRightVector() * MovementInput.Y * DeltaTime;

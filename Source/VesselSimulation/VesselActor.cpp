@@ -42,7 +42,7 @@ AVesselActor::AVesselActor() {
 	CameraBoom->Activate();
 
 	TopDownCameraComponent = NewObject<UCameraComponent>(this, TEXT("TopDownCamera"));
-	TopDownCameraComponent->bUseControllerViewRotation = false;
+	TopDownCameraComponent->bUsePawnControlRotation = false;
 	TopDownCameraComponent->AttachTo(CameraBoom, USpringArmComponent::SocketName);
 	TopDownCameraComponent->Activate();
 }
